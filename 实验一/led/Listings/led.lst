@@ -1,0 +1,36 @@
+A51 MACRO ASSEMBLER  LED                                                                  11/15/2024 16:46:22 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\led.obj
+ASSEMBLER INVOKED BY: D:\Program Files\Keil_v5\C51\BIN\A51.EXE led.asm SET(SMALL) DEBUG PRINT(.\Listings\led.lst) OBJECT
+                      (.\Objects\led.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 0000H
+0000 D2B2              2                     SETB P3.2
+0002 20B205            3     START:  JB P3.2,LOOP
+0005 759055            4                     MOV P1,#55H
+0008 80F8              5                     SJMP START
+000A 759000            6     LOOP:   MOV P1,#00H
+000D 80F3              7                     SJMP START
+                       8                     END
+A51 MACRO ASSEMBLER  LED                                                                  11/15/2024 16:46:22 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP . . . . . . .  C ADDR   000AH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+START. . . . . . .  C ADDR   0002H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

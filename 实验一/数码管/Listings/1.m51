@@ -1,0 +1,152 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/15/2024  16:46:55  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+D:\PROGRAM FILES\KEIL_V5\C51\BIN\BL51.EXE .\Objects\1.obj TO .\Objects\1 PRINT (.\Listings\1.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\1.obj (1)
+  D:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\1 (1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         ?DT?1
+            IDATA   000DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0038H     UNIT         ?PR?SEGDIS?1
+            CODE    003BH     0027H     UNIT         ?PR?MAIN?1
+            CODE    0062H     0017H     UNIT         ?PR?_DELAY_MS?1
+            CODE    0079H     0010H     UNIT         ?CO?1
+            CODE    0089H     000DH     UNIT         ?PR?GPIO_CONFIG?1
+            CODE    0096H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\1 (1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?1
+
+?PR?MAIN?1
+  +--> ?PR?GPIO_CONFIG?1
+  +--> ?CO?1
+  +--> ?PR?SEGDIS?1
+  +--> ?PR?_DELAY_MS?1
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\1 (1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/15/2024  16:46:55  PAGE 2
+
+
+  D:0093H         PUBLIC        P0M1
+  D:0080H         PUBLIC        P0
+  D:00B2H         PUBLIC        P3M0
+  D:0090H         PUBLIC        P1
+  D:00B1H         PUBLIC        P3M1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00B0H.2       PUBLIC        S1
+  D:00C0H         PUBLIC        P4
+  B:00B0H.3       PUBLIC        S2
+  D:00C8H         PUBLIC        P5
+  B:00B0H.4       PUBLIC        S3
+  D:00E8H         PUBLIC        P6
+  B:00B0H.5       PUBLIC        S4
+  D:00F8H         PUBLIC        P7
+  C:0089H         PUBLIC        GPIO_config
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:003BH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0003H         PUBLIC        SEGDIS
+  D:00F0H         PUBLIC        B
+  D:00E0H         PUBLIC        ACC
+  C:0062H         PUBLIC        _delay_ms
+  D:0008H         PUBLIC        ptr
+  D:0009H         PUBLIC        DIS
+  C:0079H         PUBLIC        disptab
+  D:00D0H         PUBLIC        PSW
+  D:0094H         PUBLIC        P0M0
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0062H         LINE#         19
+  C:0062H         LINE#         20
+  C:0062H         LINE#         23
+  C:0062H         LINE#         24
+  C:0066H         LINE#         25
+  C:006FH         LINE#         26
+  C:0078H         LINE#         27
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          SEGDIS
+  C:0003H         LINE#         15
+  C:0003H         LINE#         16
+  C:0003H         LINE#         17
+  C:0006H         LINE#         18
+  C:000EH         LINE#         19
+  C:001DH         LINE#         20
+  C:001DH         LINE#         21
+  C:0021H         LINE#         22
+  C:0025H         LINE#         23
+  C:0029H         LINE#         24
+  C:002BH         LINE#         25
+  C:002BH         LINE#         26
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/15/2024  16:46:55  PAGE 3
+
+
+  C:0033H         LINE#         27
+  C:003AH         LINE#         28
+  -------         ENDPROC       SEGDIS
+  -------         PROC          GPIO_CONFIG
+  C:0089H         LINE#         30
+  C:0089H         LINE#         31
+  C:0089H         LINE#         32
+  C:008FH         LINE#         33
+  C:0095H         LINE#         34
+  -------         ENDPROC       GPIO_CONFIG
+  -------         PROC          MAIN
+  C:003BH         LINE#         36
+  C:003BH         LINE#         37
+  C:003BH         LINE#         38
+  C:003EH         LINE#         39
+  C:0046H         LINE#         40
+  C:004DH         LINE#         41
+  C:004FH         LINE#         42
+  C:0056H         LINE#         43
+  C:0056H         LINE#         44
+  C:0056H         LINE#         45
+  C:0059H         LINE#         46
+  C:0060H         LINE#         47
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        1
+
+Program Size: data=14.0 xdata=0 code=162
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
