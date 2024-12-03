@@ -1,0 +1,58 @@
+A51 MACRO ASSEMBLER  2                                                                    11/02/2024 17:19:57 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\2.obj
+ASSEMBLER INVOKED BY: D:\Program Files\Keil_v5\C51\BIN\A51.EXE 2.asm SET(SMALL) DEBUG PRINT(.\Listings\2.lst) OBJECT(.\O
+                      bjects\2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 900022            2     MOV DPTR, #TAB          ; 初始化段码表的地址
+0003 7800              3     MOV R0, #0
+0005 7904              4     MOV R1, #04H            ; 使用P3.2作为初始位选
+                       5     
+0007                   6     MAIN:
+0007 7580FF            7         MOV P0, #0FFH       ; 清屏，关闭所有段
+000A 75B0FF            8         MOV P3, #0FFH       ; 清除位选，关闭所有数码管
+                       9             ; 短延时以确保清屏有效
+                      10     
+000D E8               11         MOV A, R0
+000E 93               12         MOVC A, @A+DPTR
+000F F580             13         MOV P0, A
+                      14     
+0011 E9               15         MOV A, R1
+0012 F5B0             16         MOV P3, A
+                      17     
+0014 08               18         INC R0
+0015 23               19         RL A
+0016 543C             20         ANL A, #03CH         ; 只保留P3.2到P3.5的有效位
+0018 F9               21         MOV R1, A
+                      22      
+0019 B804EB           23         CJNE R0, #04H, MAIN
+001C 7800             24         MOV R0, #00H        ; 重置R0和R1
+001E 7904             25         MOV R1, #04H
+0020 80E5             26         SJMP MAIN
+                      27     
+0022 F9C0F992         28     TAB: DB 0xF9, 0xC0, 0xF9, 0x92  ; 数码管段码表，显示 1015
+                      29     
+                      30     END
+A51 MACRO ASSEMBLER  2                                                                    11/02/2024 17:19:57 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+MAIN . . . . . . .  C ADDR   0007H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+TAB. . . . . . . .  C ADDR   0022H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
